@@ -63,7 +63,8 @@ total_missing<-sum(is.na(activity$steps))
 total_missing
 ```
 
-2. Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval.
+2. Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval. The mean for that 5-minute interval is used.
+
 ```{r, echo=TRUE}
 activity$imputed <- ifelse (is.na(activity$steps), df2$avg[match(df2$interval, activity$interval)], activity$steps)
 head(activity)

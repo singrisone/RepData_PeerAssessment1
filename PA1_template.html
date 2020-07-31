@@ -453,7 +453,7 @@ max_step</code></pre>
 total_missing</code></pre>
 <pre><code>## [1] 2304</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li>Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval.</li>
+<li>Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval. The mean for that 5-minute interval is used.</li>
 </ol>
 <pre class="r"><code>activity$imputed &lt;- ifelse (is.na(activity$steps), df2$avg[match(df2$interval, activity$interval)], activity$steps)
 head(activity)</code></pre>
